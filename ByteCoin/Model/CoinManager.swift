@@ -47,10 +47,10 @@ struct CoinManager {
         }
     }
     
-    func parseJSON(_ coinData: Data) -> Coin?{
+    func parseJSON(_ data: Data) -> Coin?{
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(Coin.self, from: coinData)
+            let decodedData = try decoder.decode(Coin.self, from: data)
             
             let rate = decodedData.rate
             let asset_id_quote = decodedData.asset_id_quote

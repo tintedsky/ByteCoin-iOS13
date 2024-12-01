@@ -23,6 +23,10 @@ class ViewController: UIViewController {
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
         coinManager.delegate = self
+        
+        let initialRow = currencyPicker.selectedRow(inComponent: 0)
+        let initialCurrency = coinManager.currencyArray[initialRow]
+        coinManager.getCoinPrice(for: initialCurrency)
     }
 
 }
